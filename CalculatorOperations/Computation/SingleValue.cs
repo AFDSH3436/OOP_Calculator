@@ -8,19 +8,10 @@ namespace CalculatorOperations.Computation
     /// </summary>
     public class SingleValue : ISingleValueCompute
     {
-        //public decimal Value { get; }
-        //public OperationType Type { get; }
         private ISingleValueOperation _operation;
 
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        /// <param name="value">The imputed value</param>
-        /// <param name="type">The Operation type</param>
-        public SingleValue(/*decimal value, OperationType type*/)
+        public SingleValue()
         {
-            //Value = value;
-            //Type = type;
         }
 
         /// <summary>

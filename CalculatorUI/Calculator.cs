@@ -47,26 +47,6 @@ namespace CalculatorUI
         }
 
         /// <summary>
-        /// A method that handles user numerical inputs
-        /// </summary>
-        /// <param name="sender">The button sending the event</param>
-        /// <param name="e">The event sent</param>
-        private void NumericInput(object sender, EventArgs e)
-        {
-            Button aButton = (Button)sender;
-            if (aButton.Text == "." && CalculatorDisplay.Text.Contains("."))
-            {
-                return;
-            }
-
-            if (aButton.Text == "0" && CalculatorDisplay.Text == "0.")
-            {
-                return;
-            }
-            NumericalInput(aButton.Text);
-        }
-
-        /// <summary>
         /// Wipes/resets all data inputs
         /// </summary>
         private void WipeAll()
@@ -123,6 +103,26 @@ namespace CalculatorUI
         }
 
         #endregion Helper Methods
+
+        /// <summary>
+        /// A method that handles user numerical inputs
+        /// </summary>
+        /// <param name="sender">The button sending the event</param>
+        /// <param name="e">The event sent</param>
+        private void NumericInput(object sender, EventArgs e)
+        {
+            Button aButton = (Button)sender;
+            if (aButton.Text == "." && CalculatorDisplay.Text.Contains("."))
+            {
+                return;
+            }
+
+            if (aButton.Text == "0" && CalculatorDisplay.Text == "0.")
+            {
+                return;
+            }
+            NumericalInput(aButton.Text);
+        }
 
         /// <summary>
         /// Removes the last item on the display

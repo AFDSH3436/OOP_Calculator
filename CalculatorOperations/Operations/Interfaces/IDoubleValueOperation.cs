@@ -6,7 +6,7 @@
     public interface IDoubleValueOperation
     {
         /// <summary>
-        /// The method to be overridden every operation class
+        /// The method to be overridden by every double value operation class
         /// </summary>
         /// <param name="firstValue">First value</param>
         /// <param name="secondValue">second value</param>

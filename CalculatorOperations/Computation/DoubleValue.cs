@@ -8,16 +8,10 @@ namespace CalculatorOperations.Computation
     /// </summary>
     public class DoubleValue : IDoubleValueCompute
     {
-        //public decimal FirstValue { get; set; }
-        //public decimal SecondValue { get; set; }
-        //public OperationType Type { get; set; }
         private IDoubleValueOperation _operation;
 
-        public DoubleValue(/*decimal firstValue, decimal secondValue, OperationType type*/)
+        public DoubleValue()
         {
-            //FirstValue = firstValue;
-            //SecondValue = secondValue;
-            //Type = type;
         }
 
         /// <summary>

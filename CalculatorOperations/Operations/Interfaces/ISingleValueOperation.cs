@@ -6,7 +6,7 @@
     public interface ISingleValueOperation
     {
         /// <summary>
-        /// The method to be overridden every operation class
+        /// The method to be overridden every single value operation class
         /// </summary>
         /// <param name="value">The value passed</param>
         /// <returns>The returned value</returns>
