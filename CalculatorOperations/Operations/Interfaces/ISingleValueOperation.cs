@@ -9,7 +9,7 @@ namespace CalculatorOperations.Operations.Interfaces
     /// <summary>
     /// An interface that handles the execution of each trigonometric operation
     /// </summary>
-    public interface ITrigOperation
+    public interface ISingleValueOperation
     {
         /// <summary>
         /// The method to be overridden every operation class

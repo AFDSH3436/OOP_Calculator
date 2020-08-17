@@ -1,19 +1,22 @@
 ﻿using System;
 using System.Windows.Forms;
+using CalculatorOperations.Computation;
 
 namespace CalculatorUI
 {
     internal static class Program
     {
         /// <summary>
-        /// The main entry point for the application.
+        /// The main entry point for the application...
         /// </summary>
         [STAThread]
         private static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Calculator());
+            ICompute doubleVal = new DoubleValue();
+            ISingleValueCompute singleVal = new SingleValue();
+            Application.Run(new Calculator(doubleVal, singleVal));
         }
     }
 }

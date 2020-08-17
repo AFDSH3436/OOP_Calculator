@@ -3,7 +3,7 @@
     /// <summary>
     /// An interface that handles the execution of each operation
     /// </summary>
-    public interface IOperation
+    public interface IDoubleValueOperation
     {
         /// <summary>
         /// The method to be overridden every operation class

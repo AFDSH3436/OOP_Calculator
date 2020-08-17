@@ -5,39 +5,59 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CalculatorOperations.Operations;
+using CalculatorOperations.Operations.Interfaces;
 
 namespace CalculatorOperations.Computation
 {
-    public class SingleValue : ICompute
+    /// <summary>
+    /// A class that handles the calculation of single values
+    /// </summary>
+    public class SingleValue : ISingleValueCompute
     {
-        public decimal Value { get; }
-        public OperationType Type { get; }
+        //public decimal Value { get; }
+        //public OperationType Type { get; }
+        private ISingleValueOperation _operation;
 
-        public SingleValue(decimal value, OperationType type)
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="value">The imputed value</param>
+        /// <param name="type">The Operation type</param>
+        public SingleValue(/*decimal value, OperationType type*/)
         {
-            Value = value;
-            Type = type;
+            //Value = value;
+            //Type = type;
         }
 
-        public static decimal ComputeIt(decimal value, OperationType type)
+        /// <summary>
+        /// A method that calculates all single imputed value based on the type of operation
+        /// </summary>
+        /// <param name="value">The imputed value</param>
+        /// <param name="type">The Operation type</param>
+        /// <returns></returns>
+        public decimal ComputeIt(decimal value, OperationType type)
         {
             decimal valueToReturn;
             switch (type)
             {
                 case OperationType.Sine:
-                    valueToReturn = Sine.Execute(value);
+                    _operation = new Sine();
+                    valueToReturn = _operation.Execute(value);
                     break;
 
                 case OperationType.Cosine:
-                    valueToReturn = Cosine.Execute(value);
+                    _operation = new Cosine();
+                    valueToReturn = _operation.Execute(value);
                     break;
 
                 case OperationType.Tangent:
-                    valueToReturn = Tangent.Execute(value);
+                    _operation = new Tangent();
+                    valueToReturn = _operation.Execute(value);
                     break;
 
                 case OperationType.SquareRoot:
-                    valueToReturn = (decimal)Math.Sqrt((double)value);//.ToString(CultureInfo.InvariantCulture);
+                    _operation = new SquareRoot();
+                    valueToReturn = _operation.Execute(value);
                     break;
 
                 default:
@@ -46,11 +66,6 @@ namespace CalculatorOperations.Computation
             }
 
             return valueToReturn;
-        }
-
-        public decimal ComputeIt()
-        {
-            return ComputeIt(Value, Type);
         }
     }
 }

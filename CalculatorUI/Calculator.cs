@@ -14,12 +14,15 @@ namespace CalculatorUI
         private string _theInputs = "";
         private decimal _firstValue = 0;
         private decimal _secondValue = 0;
+        private readonly ICompute _computeDoubleValue;
+        private readonly ISingleValueCompute _computeSingleValue;
 
-        public Calculator()
+        public Calculator(ICompute doubleVal, ISingleValueCompute singleVal)
         {
             InitializeComponent();
             Switch();
-            _type = OperationType.Null;
+            _computeDoubleValue = doubleVal;
+            _computeSingleValue = singleVal;
         }
 
         #region Helper Methods
@@ -107,15 +110,13 @@ namespace CalculatorUI
         /// </summary>
         /// <param name="sign">A sign representation of the operation</param>
         /// <param name="theOperator">An instance of an operation class passed</param>
-        private void Operation(string sign, IOperation theOperator)
+        private void Operation(string sign)
         {
             if (_type != OperationType.Null && _firstValue != 0)
             {
-                //_firstValue = decimal.Parse(CalculatorDisplay.Text);
-                _firstValue = theOperator.Execute(_firstValue, decimal.Parse(CalculatorDisplay.Text));
+                _firstValue = _computeDoubleValue.ComputeIt(_firstValue, decimal.Parse(CalculatorDisplay.Text), _type);
                 TempDisplay.Text = _firstValue + sign;
                 CalculatorDisplay.Text = "0.";
-                //_theInputs = string.Empty;
                 return;
             }
             _firstValue = decimal.Parse(CalculatorDisplay.Text);
@@ -185,7 +186,7 @@ namespace CalculatorUI
         {
             _type = OperationType.Addition;
             _theInputs = string.Empty;
-            Operation("+", new Addition());
+            Operation("+");
         }
 
         /// <summary>
@@ -197,7 +198,7 @@ namespace CalculatorUI
         {
             _type = OperationType.Subtraction;
             _theInputs = string.Empty;
-            Operation("-", new Subtraction());
+            Operation("-");
         }
 
         /// <summary>
@@ -209,7 +210,7 @@ namespace CalculatorUI
         {
             _type = OperationType.Multiplication;
             _theInputs = string.Empty;
-            Operation("*", new Multiplication());
+            Operation("*");
         }
 
         /// <summary>
@@ -223,7 +224,7 @@ namespace CalculatorUI
             _theInputs = string.Empty;
             try
             {
-                Operation("÷", new Division());
+                Operation("÷");
             }
             catch (DivideByZeroException exception)
             {
@@ -243,7 +244,7 @@ namespace CalculatorUI
             _theInputs = string.Empty;
             try
             {
-                Operation("%", new Modulus());
+                Operation("%");
             }
             catch (DivideByZeroException exception)
             {
@@ -270,40 +271,29 @@ namespace CalculatorUI
         }
 
         /// <summary>
-        /// Computes the sine of the value on display
-        /// </summary>
-        /// <param name="sender">Object of the event sender</param>
-        /// <param name="e">The event being sent</param>
-        private void SineKey_Click(object sender, EventArgs e)
-        {
-            //_type = OperationType.Sine;
-            _theInputs = string.Empty;
-            CalculatorDisplay.Text = SingleValue.ComputeIt(decimal.Parse(CalculatorDisplay.Text), OperationType.Sine).ToString(CultureInfo.InvariantCulture);
-            //CalculatorDisplay.Text = Sine.Execute(decimal.Parse(CalculatorDisplay.Text));
-            TempDisplay.Text = CalculatorDisplay.Text;
-        }
-
-        /// <summary>
         /// Computes the Cosine of the value on display
         /// </summary>
         /// <param name="sender">Object of the event sender</param>
         /// <param name="e">The event being sent</param>
-        private void CosKey_Click(object sender, EventArgs e)
+        private void TrigKeys_Click(object sender, EventArgs e)
         {
-            _theInputs = string.Empty;
-            CalculatorDisplay.Text = Cosine.Execute(decimal.Parse(CalculatorDisplay.Text)).ToString(CultureInfo.InvariantCulture);
-            TempDisplay.Text = CalculatorDisplay.Text;
-        }
+            Button theSender = (Button)sender;
+            switch (theSender.Text)
+            {
+                case "Sin":
+                    _type = OperationType.Sine;
+                    break;
 
-        /// <summary>
-        /// Computes the Tangent of the value on display
-        /// </summary>
-        /// <param name="sender">Object of the event sender</param>
-        /// <param name="e">The event being sent</param>
-        private void TanKey_Click(object sender, EventArgs e)
-        {
+                case "Cos":
+                    _type = OperationType.Cosine;
+                    break;
+
+                case "Tan":
+                    _type = OperationType.Tangent;
+                    break;
+            }
             _theInputs = string.Empty;
-            CalculatorDisplay.Text = Tangent.Execute(decimal.Parse(CalculatorDisplay.Text)).ToString(CultureInfo.InvariantCulture);
+            CalculatorDisplay.Text = _computeSingleValue.ComputeIt(decimal.Parse(CalculatorDisplay.Text), _type).ToString(CultureInfo.InvariantCulture);
             TempDisplay.Text = CalculatorDisplay.Text;
         }
 
@@ -323,7 +313,7 @@ namespace CalculatorUI
             _secondValue = decimal.Parse(CalculatorDisplay.Text);
             try
             {
-                CalculatorDisplay.Text = DoubleValues.ComputeIt(_firstValue, _secondValue, _type).ToString(CultureInfo.InvariantCulture);
+                CalculatorDisplay.Text = _computeDoubleValue.ComputeIt(_firstValue, _secondValue, _type).ToString(CultureInfo.InvariantCulture);
                 ShallowWipe();
                 TempDisplay.Text = CalculatorDisplay.Text;
             }

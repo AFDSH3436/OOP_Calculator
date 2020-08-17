@@ -93,7 +93,7 @@
             this.SineKey.Text = "Sin";
             this.Display.SetToolTip(this.SineKey, "Sine");
             this.SineKey.UseVisualStyleBackColor = false;
-            this.SineKey.Click += new System.EventHandler(this.SineKey_Click);
+            this.SineKey.Click += new System.EventHandler(this.TrigKeys_Click);
             // 
             // CosKey
             // 
@@ -108,7 +108,7 @@
             this.CosKey.Text = "Cos";
             this.Display.SetToolTip(this.CosKey, "Cosine");
             this.CosKey.UseVisualStyleBackColor = false;
-            this.CosKey.Click += new System.EventHandler(this.CosKey_Click);
+            this.CosKey.Click += new System.EventHandler(this.TrigKeys_Click);
             // 
             // TanKey
             // 
@@ -123,7 +123,7 @@
             this.TanKey.Text = "Tan";
             this.Display.SetToolTip(this.TanKey, "Tangent");
             this.TanKey.UseVisualStyleBackColor = false;
-            this.TanKey.Click += new System.EventHandler(this.TanKey_Click);
+            this.TanKey.Click += new System.EventHandler(this.TrigKeys_Click);
             // 
             // PowerKey
             // 

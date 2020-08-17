@@ -5,7 +5,7 @@ namespace CalculatorOperations.Operations
     /// <summary>
     /// A class that computes the division of two values
     /// </summary>
-    public class Division : IOperation
+    public class Division : IDoubleValueOperation
 
     {
         /// <summary>
@@ -14,20 +14,9 @@ namespace CalculatorOperations.Operations
         /// <param name="firstValue">First number</param>
         /// <param name="secondValue">Second number</param>
         /// <returns>The returned value</returns>
-        public static decimal Execute(decimal firstValue, decimal secondValue)
+        public decimal Execute(decimal firstValue, decimal secondValue)
         {
             return firstValue / secondValue;
-        }
-
-        /// <summary>
-        /// The Inherited interface overload of the Execute method
-        /// </summary>
-        /// <param name="firstValue">First number</param>
-        /// <param name="secondValue">Second number</param>
-        /// <returns>The returned value</returns>
-        decimal IOperation.Execute(decimal firstValue, decimal secondValue)
-        {
-            return Execute(firstValue, secondValue);
         }
     }
 }
