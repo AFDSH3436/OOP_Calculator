@@ -1,0 +1,13 @@
+C:\Users\hp\Documents\Visual Studio 2019\Projects\OOPCalculator\OOPCalculator\CalculatorUI\bin\Debug\CalculatorUI.exe.config
+C:\Users\hp\Documents\Visual Studio 2019\Projects\OOPCalculator\OOPCalculator\CalculatorUI\bin\Debug\CalculatorUI.exe
+C:\Users\hp\Documents\Visual Studio 2019\Projects\OOPCalculator\OOPCalculator\CalculatorUI\bin\Debug\CalculatorUI.pdb
+C:\Users\hp\Documents\Visual Studio 2019\Projects\OOPCalculator\OOPCalculator\CalculatorUI\bin\Debug\CalculatorOperations.dll
+C:\Users\hp\Documents\Visual Studio 2019\Projects\OOPCalculator\OOPCalculator\CalculatorUI\bin\Debug\CalculatorOperations.pdb
+C:\Users\hp\Documents\Visual Studio 2019\Projects\OOPCalculator\OOPCalculator\CalculatorUI\obj\Debug\CalculatorUI.csprojAssemblyReference.cache
+C:\Users\hp\Documents\Visual Studio 2019\Projects\OOPCalculator\OOPCalculator\CalculatorUI\obj\Debug\CalculatorUI.Properties.Resources.resources
+C:\Users\hp\Documents\Visual Studio 2019\Projects\OOPCalculator\OOPCalculator\CalculatorUI\obj\Debug\CalculatorUI.csproj.GenerateResource.cache
+C:\Users\hp\Documents\Visual Studio 2019\Projects\OOPCalculator\OOPCalculator\CalculatorUI\obj\Debug\CalculatorUI.csproj.CoreCompileInputs.cache
+C:\Users\hp\Documents\Visual Studio 2019\Projects\OOPCalculator\OOPCalculator\CalculatorUI\obj\Debug\CalculatorUI.csproj.CopyComplete
+C:\Users\hp\Documents\Visual Studio 2019\Projects\OOPCalculator\OOPCalculator\CalculatorUI\obj\Debug\CalculatorUI.exe
+C:\Users\hp\Documents\Visual Studio 2019\Projects\OOPCalculator\OOPCalculator\CalculatorUI\obj\Debug\CalculatorUI.pdb
+C:\Users\hp\Documents\Visual Studio 2019\Projects\OOPCalculator\OOPCalculator\CalculatorUI\obj\Debug\CalculatorUI.Calculator.resources

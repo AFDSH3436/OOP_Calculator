@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "luFlE3r+OFVemwqLox+ndiY4g6biVhmJcvKMRdnJJUO2Yb6Aie4s093C2MBCjRG7Lk7wArLF4rm2XX1s5kMzyQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\hp\\Documents\\Visual Studio 2019\\Projects\\OOPCalculator\\OOPCalculator\\CalcOperations\\CalcOperations.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hp\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

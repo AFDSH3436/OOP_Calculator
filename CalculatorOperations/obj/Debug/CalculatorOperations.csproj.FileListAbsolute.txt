@@ -1,0 +1,6 @@
+C:\Users\hp\Documents\Visual Studio 2019\Projects\OOPCalculator\OOPCalculator\CalculatorOperations\bin\Debug\CalculatorOperations.dll
+C:\Users\hp\Documents\Visual Studio 2019\Projects\OOPCalculator\OOPCalculator\CalculatorOperations\bin\Debug\CalculatorOperations.pdb
+C:\Users\hp\Documents\Visual Studio 2019\Projects\OOPCalculator\OOPCalculator\CalculatorOperations\obj\Debug\CalculatorOperations.csproj.CoreCompileInputs.cache
+C:\Users\hp\Documents\Visual Studio 2019\Projects\OOPCalculator\OOPCalculator\CalculatorOperations\obj\Debug\CalculatorOperations.dll
+C:\Users\hp\Documents\Visual Studio 2019\Projects\OOPCalculator\OOPCalculator\CalculatorOperations\obj\Debug\CalculatorOperations.pdb
+C:\Users\hp\Documents\Visual Studio 2019\Projects\OOPCalculator\OOPCalculator\CalculatorOperations\obj\Debug\CalculatorOperations.csprojAssemblyReference.cache
