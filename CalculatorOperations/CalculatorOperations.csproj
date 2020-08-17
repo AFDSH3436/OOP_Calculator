@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Computation\ICompute.cs" />
+    <Compile Include="Computation\IDoubleValueCompute.cs" />
     <Compile Include="Computation\ISingleValueCompute.cs" />
     <Compile Include="Computation\SingleValue.cs" />
     <Compile Include="Computation\DoubleValue.cs" />

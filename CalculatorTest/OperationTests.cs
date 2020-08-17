@@ -1,4 +1,3 @@
-using CalculatorOperations.Operations;
 using CalculatorOperations.Computation;
 using NUnit.Framework;
 using System;
@@ -16,10 +15,10 @@ namespace CalculatorTest
         public void AdditionTest()
         {
             //Arrange
-            ICompute newOne = new DoubleValue(20, 20, OperationType.Addition);
+            IDoubleValueCompute newOne = new DoubleValue();
 
             //Act
-            decimal actual = newOne.ComputeIt();
+            decimal actual = newOne.ComputeIt(20, 20, OperationType.Addition);
             decimal expected = 40;
 
             //Assert
@@ -30,10 +29,10 @@ namespace CalculatorTest
         public void SubtractionTest()
         {
             //Arrange
-            ICompute newOne = new DoubleValue(50, 20, OperationType.Subtraction);
+            IDoubleValueCompute newOne = new DoubleValue();
 
             //Act
-            decimal actual = newOne.ComputeIt();
+            decimal actual = newOne.ComputeIt(50, 20, OperationType.Subtraction);
             decimal expected = 30;
 
             //Assert
@@ -44,10 +43,10 @@ namespace CalculatorTest
         public void MultiplicationTest()
         {
             //Arrange
-            ICompute newOne = new DoubleValue(10, 20, OperationType.Multiplication);
+            IDoubleValueCompute newOne = new DoubleValue();
 
             //Act
-            decimal actual = newOne.ComputeIt();
+            decimal actual = newOne.ComputeIt(10, 20, OperationType.Multiplication);
             decimal expected = 200;
 
             //Assert
@@ -58,10 +57,10 @@ namespace CalculatorTest
         public void DivisionTest()
         {
             //Arrange
-            ICompute newOne = new DoubleValue(20, 2, OperationType.Division);
+            IDoubleValueCompute newOne = new DoubleValue();
 
             //Act
-            decimal actual = newOne.ComputeIt();
+            decimal actual = newOne.ComputeIt(20, 2, OperationType.Division);
             decimal expected = 10;
 
             //Assert
@@ -72,20 +71,20 @@ namespace CalculatorTest
         public void DivisionByZeroErrorTest()
         {
             //Arrange
-            ICompute newOne = new DoubleValue(20, 0, OperationType.Division);
+            IDoubleValueCompute newOne = new DoubleValue();
 
             //Act and Assert
-            Assert.That(() => newOne.ComputeIt(), Throws.TypeOf<DivideByZeroException>());
+            Assert.That(() => newOne.ComputeIt(20, 0, OperationType.Division), Throws.TypeOf<DivideByZeroException>());
         }
 
         [Test]
         public void PowerTest()
         {
             //Arrange
-            ICompute newOne = new DoubleValue(100, 2, OperationType.Power);
+            IDoubleValueCompute newOne = new DoubleValue();
 
             //Act
-            decimal actual = newOne.ComputeIt();
+            decimal actual = newOne.ComputeIt(100, 2, OperationType.Power);
             decimal expected = 10000;
 
             //Assert
@@ -96,10 +95,10 @@ namespace CalculatorTest
         public void ModulusTest()
         {
             //Arrange
-            ICompute newOne = new DoubleValue(11, 2, OperationType.Modulus);
+            IDoubleValueCompute newOne = new DoubleValue();
 
             //Act
-            decimal actual = newOne.ComputeIt();
+            decimal actual = newOne.ComputeIt(11, 2, OperationType.Modulus);
             decimal expected = 1;
 
             //Assert
@@ -110,10 +109,10 @@ namespace CalculatorTest
         public void SquareRootTest()
         {
             //Arrange
-            ICompute newOne = new SingleValue(400, OperationType.SquareRoot);
+            ISingleValueCompute newOne = new SingleValue();
 
             //Act
-            decimal actual = newOne.ComputeIt();
+            decimal actual = newOne.ComputeIt(400, OperationType.SquareRoot);
             decimal expected = 20;
 
             //Assert

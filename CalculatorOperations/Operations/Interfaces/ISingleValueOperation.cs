@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CalculatorOperations.Operations.Interfaces
+﻿namespace CalculatorOperations.Operations.Interfaces
 {
     /// <summary>
     /// An interface that handles the execution of each trigonometric operation

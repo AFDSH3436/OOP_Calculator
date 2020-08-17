@@ -1,6 +1,5 @@
-﻿using System;
-using System.Globalization;
-using CalculatorOperations.Operations.Interfaces;
+﻿using CalculatorOperations.Operations.Interfaces;
+using System;
 
 namespace CalculatorOperations.Operations
 {

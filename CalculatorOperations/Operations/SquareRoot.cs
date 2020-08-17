@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CalculatorOperations.Operations.Interfaces;
+﻿using CalculatorOperations.Operations.Interfaces;
+using System;
 
 namespace CalculatorOperations.Operations
 {

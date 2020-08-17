@@ -1,9 +1,7 @@
 ﻿using CalculatorOperations.Computation;
-using CalculatorOperations.Operations;
 using System;
 using System.Globalization;
 using System.Windows.Forms;
-using CalculatorOperations.Operations.Interfaces;
 
 namespace CalculatorUI
 {
@@ -14,10 +12,10 @@ namespace CalculatorUI
         private string _theInputs = "";
         private decimal _firstValue = 0;
         private decimal _secondValue = 0;
-        private readonly ICompute _computeDoubleValue;
+        private readonly IDoubleValueCompute _computeDoubleValue;
         private readonly ISingleValueCompute _computeSingleValue;
 
-        public Calculator(ICompute doubleVal, ISingleValueCompute singleVal)
+        public Calculator(IDoubleValueCompute doubleVal, ISingleValueCompute singleVal)
         {
             InitializeComponent();
             Switch();

@@ -1,6 +1,4 @@
-﻿using System;
-using CalculatorOperations.Operations;
-using System.Globalization;
+﻿using CalculatorOperations.Operations;
 using CalculatorOperations.Operations.Interfaces;
 
 namespace CalculatorOperations.Computation
@@ -8,7 +6,7 @@ namespace CalculatorOperations.Computation
     /// <summary>
     /// A class that computes and outputs user inputs
     /// </summary>
-    public class DoubleValue : ICompute
+    public class DoubleValue : IDoubleValueCompute
     {
         //public decimal FirstValue { get; set; }
         //public decimal SecondValue { get; set; }

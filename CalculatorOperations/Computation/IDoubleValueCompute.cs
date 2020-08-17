@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CalculatorOperations.Operations.Interfaces;
-
-namespace CalculatorOperations.Computation
+﻿namespace CalculatorOperations.Computation
 {
     /// <summary>
     /// An interface that computes all the calculator operations
     /// </summary>
-    public interface ICompute
+    public interface IDoubleValueCompute
     {
         /// <summary>
         /// A method that grabs all the computed operations and returns it

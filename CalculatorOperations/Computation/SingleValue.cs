@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CalculatorOperations.Operations;
+﻿using CalculatorOperations.Operations;
 using CalculatorOperations.Operations.Interfaces;
 
 namespace CalculatorOperations.Computation
