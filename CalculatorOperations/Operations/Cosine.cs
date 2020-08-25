@@ -4,7 +4,7 @@ using System;
 namespace CalculatorOperations.Operations
 {
     /// <summary>
-    /// A class for getting the Cosine value
+    /// A class for getting the Cosine of a value
     /// </summary>
     public class Cosine : ISingleValueOperation
     {

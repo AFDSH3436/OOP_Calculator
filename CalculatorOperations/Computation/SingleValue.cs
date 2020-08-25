@@ -45,6 +45,11 @@ namespace CalculatorOperations.Computation
                     valueToReturn = _operation.Execute(value);
                     break;
 
+                case OperationType.Inverse:
+                    _operation = new Inverse();
+                    valueToReturn = _operation.Execute(value);
+                    break;
+
                 default:
                     valueToReturn = 0;
                     break;

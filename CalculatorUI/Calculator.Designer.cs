@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calculator));
             this.CalculatorDisplay = new System.Windows.Forms.TextBox();
             this.TempDisplay = new System.Windows.Forms.Label();
             this.SineKey = new System.Windows.Forms.Button();
@@ -90,10 +91,10 @@
             this.SineKey.Name = "SineKey";
             this.SineKey.Size = new System.Drawing.Size(106, 84);
             this.SineKey.TabIndex = 4;
-            this.SineKey.Text = "Sin";
-            this.Display.SetToolTip(this.SineKey, "Sine");
+            this.SineKey.Text = "⅟ ";
+            this.Display.SetToolTip(this.SineKey, "Inverse");
             this.SineKey.UseVisualStyleBackColor = false;
-            this.SineKey.Click += new System.EventHandler(this.TrigKeys_Click);
+            this.SineKey.Click += new System.EventHandler(this.SpecialKeys_Click);
             // 
             // CosKey
             // 
@@ -105,10 +106,10 @@
             this.CosKey.Name = "CosKey";
             this.CosKey.Size = new System.Drawing.Size(107, 84);
             this.CosKey.TabIndex = 4;
-            this.CosKey.Text = "Cos";
-            this.Display.SetToolTip(this.CosKey, "Cosine");
+            this.CosKey.Text = "√";
+            this.Display.SetToolTip(this.CosKey, "SquareRoot");
             this.CosKey.UseVisualStyleBackColor = false;
-            this.CosKey.Click += new System.EventHandler(this.TrigKeys_Click);
+            this.CosKey.Click += new System.EventHandler(this.SpecialKeys_Click);
             // 
             // TanKey
             // 
@@ -120,10 +121,10 @@
             this.TanKey.Name = "TanKey";
             this.TanKey.Size = new System.Drawing.Size(104, 84);
             this.TanKey.TabIndex = 4;
-            this.TanKey.Text = "Tan";
-            this.Display.SetToolTip(this.TanKey, "Tangent");
+            this.TanKey.Text = "^";
+            this.Display.SetToolTip(this.TanKey, "Power");
             this.TanKey.UseVisualStyleBackColor = false;
-            this.TanKey.Click += new System.EventHandler(this.TrigKeys_Click);
+            this.TanKey.Click += new System.EventHandler(this.OperationKey_click);
             // 
             // PowerKey
             // 
@@ -136,7 +137,7 @@
             this.PowerKey.Size = new System.Drawing.Size(113, 84);
             this.PowerKey.TabIndex = 4;
             this.PowerKey.Text = "On";
-            this.Display.SetToolTip(this.PowerKey, "Power");
+            this.Display.SetToolTip(this.PowerKey, "Switch");
             this.PowerKey.UseVisualStyleBackColor = false;
             this.PowerKey.Click += new System.EventHandler(this.PowerKey_Click);
             // 
@@ -198,7 +199,7 @@
             this.ModulusKey.Text = "%";
             this.Display.SetToolTip(this.ModulusKey, "Modulus");
             this.ModulusKey.UseVisualStyleBackColor = false;
-            this.ModulusKey.Click += new System.EventHandler(this.ModulusKey_Click);
+            this.ModulusKey.Click += new System.EventHandler(this.OperationKey_click);
             // 
             // NumKeySeven
             // 
@@ -258,7 +259,7 @@
             this.DivisionKey.Text = "÷";
             this.Display.SetToolTip(this.DivisionKey, "Division");
             this.DivisionKey.UseVisualStyleBackColor = false;
-            this.DivisionKey.Click += new System.EventHandler(this.DivisionKey_Click);
+            this.DivisionKey.Click += new System.EventHandler(this.OperationKey_click);
             // 
             // NumKeyFour
             // 
@@ -318,7 +319,7 @@
             this.MultiplicationKey.Text = "×";
             this.Display.SetToolTip(this.MultiplicationKey, "Multiplication");
             this.MultiplicationKey.UseVisualStyleBackColor = false;
-            this.MultiplicationKey.Click += new System.EventHandler(this.MultiplicationKey_Click);
+            this.MultiplicationKey.Click += new System.EventHandler(this.OperationKey_click);
             // 
             // NumKeyOne
             // 
@@ -378,7 +379,7 @@
             this.SubtractionKey.Text = "-";
             this.Display.SetToolTip(this.SubtractionKey, "Subtraction");
             this.SubtractionKey.UseVisualStyleBackColor = false;
-            this.SubtractionKey.Click += new System.EventHandler(this.SubtractionKey_Click);
+            this.SubtractionKey.Click += new System.EventHandler(this.OperationKey_click);
             // 
             // NumKeyZero
             // 
@@ -439,7 +440,7 @@
             this.AdditionKey.Text = "+";
             this.Display.SetToolTip(this.AdditionKey, "Addition");
             this.AdditionKey.UseVisualStyleBackColor = false;
-            this.AdditionKey.Click += new System.EventHandler(this.AdditionKey_Click);
+            this.AdditionKey.Click += new System.EventHandler(this.OperationKey_click);
             // 
             // Calculator
             // 
@@ -476,6 +477,7 @@
             this.Controls.Add(this.TempDisplay);
             this.Controls.Add(this.CalculatorDisplay);
             this.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.MaximumSize = new System.Drawing.Size(490, 743);
             this.MinimumSize = new System.Drawing.Size(490, 743);

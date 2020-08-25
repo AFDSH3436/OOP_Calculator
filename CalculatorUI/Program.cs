@@ -1,6 +1,7 @@
 ﻿using CalculatorOperations.Computation;
 using System;
 using System.Windows.Forms;
+using CalculatorOperations;
 
 namespace CalculatorUI
 {
@@ -14,9 +15,7 @@ namespace CalculatorUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            IDoubleValueCompute doubleVal = new DoubleValue();
-            ISingleValueCompute singleVal = new SingleValue();
-            Application.Run(new Calculator(doubleVal, singleVal));
+            Application.Run(new Calculator(Injector.DoubleInstance, Injector.SingleValueCompute));
         }
     }
 }

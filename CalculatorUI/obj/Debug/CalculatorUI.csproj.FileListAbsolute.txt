@@ -11,3 +11,16 @@ C:\Users\hp\Documents\Visual Studio 2019\Projects\OOPCalculator\OOPCalculator\Ca
 C:\Users\hp\Documents\Visual Studio 2019\Projects\OOPCalculator\OOPCalculator\CalculatorUI\obj\Debug\CalculatorUI.exe
 C:\Users\hp\Documents\Visual Studio 2019\Projects\OOPCalculator\OOPCalculator\CalculatorUI\obj\Debug\CalculatorUI.pdb
 C:\Users\hp\Documents\Visual Studio 2019\Projects\OOPCalculator\OOPCalculator\CalculatorUI\obj\Debug\CalculatorUI.Calculator.resources
+C:\Users\hp\Desktop\week-5-task-Bondesvick\CalculatorUI\obj\Debug\CalculatorUI.csprojAssemblyReference.cache
+C:\Users\hp\Desktop\week-5-task-Bondesvick\CalculatorUI\obj\Debug\CalculatorUI.Calculator.resources
+C:\Users\hp\Desktop\week-5-task-Bondesvick\CalculatorUI\obj\Debug\CalculatorUI.Properties.Resources.resources
+C:\Users\hp\Desktop\week-5-task-Bondesvick\CalculatorUI\obj\Debug\CalculatorUI.csproj.GenerateResource.cache
+C:\Users\hp\Desktop\week-5-task-Bondesvick\CalculatorUI\obj\Debug\CalculatorUI.csproj.CoreCompileInputs.cache
+C:\Users\hp\Desktop\week-5-task-Bondesvick\CalculatorUI\obj\Debug\CalculatorUI.exe
+C:\Users\hp\Desktop\week-5-task-Bondesvick\CalculatorUI\obj\Debug\CalculatorUI.pdb
+C:\Users\hp\Desktop\week-5-task-Bondesvick\CalculatorUI\bin\Debug\CalculatorUI.exe.config
+C:\Users\hp\Desktop\week-5-task-Bondesvick\CalculatorUI\bin\Debug\CalculatorUI.exe
+C:\Users\hp\Desktop\week-5-task-Bondesvick\CalculatorUI\bin\Debug\CalculatorUI.pdb
+C:\Users\hp\Desktop\week-5-task-Bondesvick\CalculatorUI\bin\Debug\CalculatorOperations.dll
+C:\Users\hp\Desktop\week-5-task-Bondesvick\CalculatorUI\bin\Debug\CalculatorOperations.pdb
+C:\Users\hp\Desktop\week-5-task-Bondesvick\CalculatorUI\obj\Debug\CalculatorUI.csproj.CopyComplete

@@ -47,11 +47,13 @@
     <Compile Include="Computation\ISingleValueCompute.cs" />
     <Compile Include="Computation\SingleValue.cs" />
     <Compile Include="Computation\DoubleValue.cs" />
+    <Compile Include="Injector.cs" />
     <Compile Include="Operations\Addition.cs" />
     <Compile Include="Operations\Cosine.cs" />
     <Compile Include="Operations\Division.cs" />
     <Compile Include="Operations\Interfaces\IDoubleValueOperation.cs" />
     <Compile Include="Operations\Interfaces\ISingleValueOperation.cs" />
+    <Compile Include="Operations\Inverse.cs" />
     <Compile Include="Operations\Modulus.cs" />
     <Compile Include="Operations\Multiplication.cs" />
     <Compile Include="Computation\OperationType.cs" />

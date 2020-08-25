@@ -14,6 +14,7 @@ namespace CalculatorUI
         private decimal _secondValue = 0;
         private readonly IDoubleValueCompute _computeDoubleValue;
         private readonly ISingleValueCompute _computeSingleValue;
+        private bool _pressedEqual = false;
 
         public Calculator(IDoubleValueCompute doubleVal, ISingleValueCompute singleVal)
         {
@@ -56,17 +57,7 @@ namespace CalculatorUI
             TempDisplay.Text = string.Empty;
             _firstValue = _secondValue = 0;
             _theInputs = string.Empty;
-        }
-
-        /// <summary>
-        /// Wipes/clear out all imputed data except that on the Main display
-        /// </summary>
-        private void ShallowWipe()
-        {
-            _type = OperationType.Null;
-            _firstValue = _secondValue = 0;
-            _theInputs = string.Empty;
-            TempDisplay.Text = string.Empty;
+            _pressedEqual = false;
         }
 
         /// <summary>
@@ -87,19 +78,37 @@ namespace CalculatorUI
         /// handles different maths operations (+, -, *, /)
         /// </summary>
         /// <param name="sign">A sign representation of the operation</param>
-        /// <param name="theOperator">An instance of an operation class passed</param>
         private void Operation(string sign)
         {
-            if (_type != OperationType.Null && _firstValue != 0)
+            if (_pressedEqual)
             {
-                _firstValue = _computeDoubleValue.ComputeIt(_firstValue, decimal.Parse(CalculatorDisplay.Text), _type);
-                TempDisplay.Text = _firstValue + sign;
                 CalculatorDisplay.Text = "0.";
-                return;
+                _pressedEqual = false;
+                TempDisplay.Text = _firstValue + "(" + sign + ")";
+                //_type = OperationType.Null;
             }
-            _firstValue = decimal.Parse(CalculatorDisplay.Text);
-            TempDisplay.Text = _firstValue + sign;
-            CalculatorDisplay.Text = "0.";
+
+            if (_firstValue != 0 && _type != OperationType.Null && CalculatorDisplay.Text != "0.")
+            {
+                try
+                {
+                    _firstValue = _computeDoubleValue.ComputeIt(_firstValue, decimal.Parse(CalculatorDisplay.Text), _type);
+                    TempDisplay.Text = _firstValue + "(" + sign + ")";
+                    CalculatorDisplay.Text = "0.";
+                    return;
+                }
+                catch (Exception e)
+                {
+                    TempDisplay.Text = e.Message;
+                }
+            }
+
+            if (CalculatorDisplay.Text != "0.")
+            {
+                _firstValue = decimal.Parse(CalculatorDisplay.Text);
+                TempDisplay.Text = _firstValue + "(" + sign + ")";
+                CalculatorDisplay.Text = "0.";
+            }
         }
 
         #endregion Helper Methods
@@ -158,7 +167,8 @@ namespace CalculatorUI
         /// <param name="e">The event being sent</param>
         private void PowerKey_Click(object sender, EventArgs e)
         {
-            _power ^= true;
+            //_power ^= true;
+            _power = !_power;
 
             if (_power)
             {
@@ -176,78 +186,45 @@ namespace CalculatorUI
         }
 
         /// <summary>
-        /// Computes the Addition of the value on display
+        /// Handles the click event for all the operator buttons
         /// </summary>
         /// <param name="sender">Object of the event sender</param>
         /// <param name="e">The event being sent</param>
-        private void AdditionKey_Click(object sender, EventArgs e)
+        private void OperationKey_click(object sender, EventArgs e)
         {
-            _type = OperationType.Addition;
             _theInputs = string.Empty;
-            Operation("+");
-        }
-
-        /// <summary>
-        /// Computes the Subtraction of the value on display
-        /// </summary>
-        /// <param name="sender">Object of the event sender</param>
-        /// <param name="e">The event being sent</param>
-        private void SubtractionKey_Click(object sender, EventArgs e)
-        {
-            _type = OperationType.Subtraction;
-            _theInputs = string.Empty;
-            Operation("-");
-        }
-
-        /// <summary>
-        /// Computes the Multiplication of the value on display
-        /// </summary>
-        /// <param name="sender">Object of the event sender</param>
-        /// <param name="e">The event being sent</param>
-        private void MultiplicationKey_Click(object sender, EventArgs e)
-        {
-            _type = OperationType.Multiplication;
-            _theInputs = string.Empty;
-            Operation("*");
-        }
-
-        /// <summary>
-        /// Computes the Division of the value on display
-        /// </summary>
-        /// <param name="sender">Object of the event sender</param>
-        /// <param name="e">The event being sent</param>
-        private void DivisionKey_Click(object sender, EventArgs e)
-        {
-            _type = OperationType.Division;
-            _theInputs = string.Empty;
-            try
+            var senderBtn = (Button)sender;
+            switch (senderBtn.Text)
             {
-                Operation("÷");
-            }
-            catch (DivideByZeroException exception)
-            {
-                WipeAll();
-                TempDisplay.Text = "Error! " + exception.Message;
-            }
-        }
+                case "+":
+                    _type = OperationType.Addition;
+                    Operation("+");
+                    break;
 
-        /// <summary>
-        /// Computes the Modulus of the value on display
-        /// </summary>
-        /// <param name="sender">Object of the event sender</param>
-        /// <param name="e">The event being sent</param>
-        private void ModulusKey_Click(object sender, EventArgs e)
-        {
-            _type = OperationType.Modulus;
-            _theInputs = string.Empty;
-            try
-            {
-                Operation("%");
-            }
-            catch (DivideByZeroException exception)
-            {
-                WipeAll();
-                TempDisplay.Text = "Error! " + exception.Message; ;
+                case "-":
+                    _type = OperationType.Subtraction;
+                    Operation("-");
+                    break;
+
+                case "×":
+                    _type = OperationType.Multiplication;
+                    Operation("×");
+                    break;
+
+                case "÷":
+                    _type = OperationType.Division;
+                    Operation("÷");
+                    break;
+
+                case "%":
+                    _type = OperationType.Modulus;
+                    Operation("%");
+                    break;
+
+                case "^":
+                    _type = OperationType.Power;
+                    Operation("^");
+                    break;
             }
         }
 
@@ -269,30 +246,33 @@ namespace CalculatorUI
         }
 
         /// <summary>
-        /// Computes the Cosine of the value on display
+        /// Computes the the calculations of special operations
         /// </summary>
         /// <param name="sender">Object of the event sender</param>
         /// <param name="e">The event being sent</param>
-        private void TrigKeys_Click(object sender, EventArgs e)
+        private void SpecialKeys_Click(object sender, EventArgs e)
         {
             Button theSender = (Button)sender;
             switch (theSender.Text)
             {
-                case "Sin":
-                    _type = OperationType.Sine;
+                case "⅟ ":
+                    _type = OperationType.Inverse;
                     break;
 
-                case "Cos":
-                    _type = OperationType.Cosine;
-                    break;
-
-                case "Tan":
-                    _type = OperationType.Tangent;
+                case "√":
+                    _type = OperationType.SquareRoot;
                     break;
             }
             _theInputs = string.Empty;
-            CalculatorDisplay.Text = _computeSingleValue.ComputeIt(decimal.Parse(CalculatorDisplay.Text), _type).ToString(CultureInfo.InvariantCulture);
-            TempDisplay.Text = CalculatorDisplay.Text;
+            try
+            {
+                CalculatorDisplay.Text = _computeSingleValue.ComputeIt(decimal.Parse(CalculatorDisplay.Text), _type).ToString(CultureInfo.InvariantCulture);
+                TempDisplay.Text = CalculatorDisplay.Text;
+            }
+            catch (Exception exception)
+            {
+                TempDisplay.Text = @"Error! " + exception.Message;
+            }
         }
 
         /// <summary>
@@ -307,12 +287,17 @@ namespace CalculatorUI
             {
                 return;
             }
+            if (!_pressedEqual)
+            {
+                _secondValue = decimal.Parse(CalculatorDisplay.Text);
+            }
 
-            _secondValue = decimal.Parse(CalculatorDisplay.Text);
             try
             {
-                CalculatorDisplay.Text = _computeDoubleValue.ComputeIt(_firstValue, _secondValue, _type).ToString(CultureInfo.InvariantCulture);
-                ShallowWipe();
+                _pressedEqual = true;
+                _firstValue = _computeDoubleValue.ComputeIt(_firstValue, _secondValue, _type);
+                CalculatorDisplay.Text = _firstValue.ToString(CultureInfo.InvariantCulture);
+                //ShallowWipe();
                 TempDisplay.Text = CalculatorDisplay.Text;
             }
             catch (Exception exception)

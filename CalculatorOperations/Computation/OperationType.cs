@@ -16,5 +16,6 @@
         Cosine,
         Tangent,
         SquareRoot,
+        Inverse
     }
 }
