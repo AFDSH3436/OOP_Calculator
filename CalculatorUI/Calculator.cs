@@ -53,7 +53,7 @@ namespace CalculatorUI
         private void WipeAll()
         {
             _type = OperationType.Null;
-            CalculatorDisplay.Text = "0.";
+            CalculatorDisplay.Text = "0,";
             TempDisplay.Text = string.Empty;
             _firstValue = _secondValue = 0;
             _theInputs = string.Empty;
@@ -82,19 +82,19 @@ namespace CalculatorUI
         {
             if (_pressedEqual)
             {
-                CalculatorDisplay.Text = "0.";
+                CalculatorDisplay.Text = "0,";
                 _pressedEqual = false;
                 TempDisplay.Text = _firstValue + "(" + sign + ")";
                 //_type = OperationType.Null;
             }
 
-            if (_firstValue != 0 && _type != OperationType.Null && CalculatorDisplay.Text != "0.")
+            if (_firstValue != 0 && _type != OperationType.Null && CalculatorDisplay.Text != "0,")
             {
                 try
                 {
                     _firstValue = _computeDoubleValue.ComputeIt(_firstValue, decimal.Parse(CalculatorDisplay.Text), _type);
                     TempDisplay.Text = _firstValue + "(" + sign + ")";
-                    CalculatorDisplay.Text = "0.";
+                    CalculatorDisplay.Text = "0,";
                     return;
                 }
                 catch (Exception e)
@@ -103,11 +103,11 @@ namespace CalculatorUI
                 }
             }
 
-            if (CalculatorDisplay.Text != "0.")
+            if (CalculatorDisplay.Text != "0,")
             {
                 _firstValue = decimal.Parse(CalculatorDisplay.Text);
                 TempDisplay.Text = _firstValue + "(" + sign + ")";
-                CalculatorDisplay.Text = "0.";
+                CalculatorDisplay.Text = "0,";
             }
         }
 
@@ -121,12 +121,12 @@ namespace CalculatorUI
         private void NumericInput(object sender, EventArgs e)
         {
             Button aButton = (Button)sender;
-            if (aButton.Text == "." && CalculatorDisplay.Text.Contains("."))
+            if (aButton.Text == "." && CalculatorDisplay.Text.Contains(","))
             {
                 return;
             }
 
-            if (aButton.Text == "0" && CalculatorDisplay.Text == "0.")
+            if (aButton.Text == "0" && CalculatorDisplay.Text == "0,")
             {
                 return;
             }
@@ -140,13 +140,13 @@ namespace CalculatorUI
         /// <param name="e">The event being sent</param>
         private void BackSpace_Click(object sender, EventArgs e)
         {
-            if (CalculatorDisplay.Text.Length > 0 && !(CalculatorDisplay.Text == "0."))
+            if (CalculatorDisplay.Text.Length > 0 && !(CalculatorDisplay.Text == "0,"))
                 CalculatorDisplay.Text = CalculatorDisplay.Text.Substring(0, CalculatorDisplay.Text.Length - 1);
 
             if (CalculatorDisplay.Text.Length < 1)
-                CalculatorDisplay.Text = "0.";
+                CalculatorDisplay.Text = "0,";
 
-            if (CalculatorDisplay.Text == "0.")
+            if (CalculatorDisplay.Text == "0,")
                 _theInputs = string.Empty;
         }
 
@@ -173,7 +173,7 @@ namespace CalculatorUI
             if (_power)
             {
                 PowerKey.Text = "Off";
-                CalculatorDisplay.Text = "0.";
+                CalculatorDisplay.Text = "0,";
             }
             else
             {

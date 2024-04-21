@@ -18,8 +18,8 @@ namespace CalculatorTest
             IDoubleValueCompute newOne = new DoubleValue();
 
             //Act
-            decimal actual = newOne.ComputeIt(20, 20, OperationType.Addition);
-            decimal expected = 40;
+            decimal actual = newOne.ComputeIt(30, 25, OperationType.Addition);
+            decimal expected = 55;
 
             //Assert
             Assert.That(actual, Is.EqualTo(expected));
@@ -32,8 +32,8 @@ namespace CalculatorTest
             IDoubleValueCompute newOne = new DoubleValue();
 
             //Act
-            decimal actual = newOne.ComputeIt(50, 20, OperationType.Subtraction);
-            decimal expected = 30;
+            decimal actual = newOne.ComputeIt(50, 25, OperationType.Subtraction);
+            decimal expected = 25;
 
             //Assert
             Assert.That(actual, Is.EqualTo(expected));
@@ -46,8 +46,8 @@ namespace CalculatorTest
             IDoubleValueCompute newOne = new DoubleValue();
 
             //Act
-            decimal actual = newOne.ComputeIt(10, 20, OperationType.Multiplication);
-            decimal expected = 200;
+            decimal actual = newOne.ComputeIt(100, 200, OperationType.Multiplication);
+            decimal expected = 20000;
 
             //Assert
             Assert.That(actual, Is.EqualTo(expected));
@@ -60,8 +60,8 @@ namespace CalculatorTest
             IDoubleValueCompute newOne = new DoubleValue();
 
             //Act
-            decimal actual = newOne.ComputeIt(20, 2, OperationType.Division);
-            decimal expected = 10;
+            decimal actual = newOne.ComputeIt(200, 10, OperationType.Division);
+            decimal expected = 20;
 
             //Assert
             Assert.That(actual, Is.EqualTo(expected));
@@ -84,8 +84,8 @@ namespace CalculatorTest
             IDoubleValueCompute newOne = new DoubleValue();
 
             //Act
-            decimal actual = newOne.ComputeIt(100, 2, OperationType.Power);
-            decimal expected = 10000;
+            decimal actual = newOne.ComputeIt(11, 2, OperationType.Power);
+            decimal expected = 121;
 
             //Assert
             Assert.That(actual, Is.EqualTo(expected));
@@ -98,7 +98,7 @@ namespace CalculatorTest
             IDoubleValueCompute newOne = new DoubleValue();
 
             //Act
-            decimal actual = newOne.ComputeIt(11, 2, OperationType.Modulus);
+            decimal actual = newOne.ComputeIt(21, 2, OperationType.Modulus);
             decimal expected = 1;
 
             //Assert
@@ -112,8 +112,8 @@ namespace CalculatorTest
             ISingleValueCompute newOne = new SingleValue();
 
             //Act
-            decimal actual = newOne.ComputeIt(400, OperationType.SquareRoot);
-            decimal expected = 20;
+            decimal actual = newOne.ComputeIt(4, OperationType.SquareRoot);
+            decimal expected = 2;
 
             //Assert
             Assert.That(actual, Is.EqualTo(expected));

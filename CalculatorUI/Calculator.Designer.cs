@@ -406,7 +406,7 @@
             this.NumKeyDot.Name = "NumKeyDot";
             this.NumKeyDot.Size = new System.Drawing.Size(107, 84);
             this.NumKeyDot.TabIndex = 4;
-            this.NumKeyDot.Text = ".";
+            this.NumKeyDot.Text = ",";
             this.Display.SetToolTip(this.NumKeyDot, "Point");
             this.NumKeyDot.UseVisualStyleBackColor = true;
             this.NumKeyDot.Click += new System.EventHandler(this.NumericInput);

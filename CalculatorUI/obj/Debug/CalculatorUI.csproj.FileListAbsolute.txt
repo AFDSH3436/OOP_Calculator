@@ -24,3 +24,16 @@ C:\Users\hp\Desktop\week-5-task-Bondesvick\CalculatorUI\bin\Debug\CalculatorUI.p
 C:\Users\hp\Desktop\week-5-task-Bondesvick\CalculatorUI\bin\Debug\CalculatorOperations.dll
 C:\Users\hp\Desktop\week-5-task-Bondesvick\CalculatorUI\bin\Debug\CalculatorOperations.pdb
 C:\Users\hp\Desktop\week-5-task-Bondesvick\CalculatorUI\obj\Debug\CalculatorUI.csproj.CopyComplete
+C:\Users\Артём Плешаков\Source\Repos\OOP_Calculator\CalculatorUI\bin\Debug\CalculatorUI.exe.config
+C:\Users\Артём Плешаков\Source\Repos\OOP_Calculator\CalculatorUI\bin\Debug\CalculatorUI.exe
+C:\Users\Артём Плешаков\Source\Repos\OOP_Calculator\CalculatorUI\bin\Debug\CalculatorUI.pdb
+C:\Users\Артём Плешаков\Source\Repos\OOP_Calculator\CalculatorUI\bin\Debug\CalculatorOperations.dll
+C:\Users\Артём Плешаков\Source\Repos\OOP_Calculator\CalculatorUI\bin\Debug\CalculatorOperations.pdb
+C:\Users\Артём Плешаков\Source\Repos\OOP_Calculator\CalculatorUI\obj\Debug\CalculatorUI.csproj.AssemblyReference.cache
+C:\Users\Артём Плешаков\Source\Repos\OOP_Calculator\CalculatorUI\obj\Debug\CalculatorUI.Calculator.resources
+C:\Users\Артём Плешаков\Source\Repos\OOP_Calculator\CalculatorUI\obj\Debug\CalculatorUI.Properties.Resources.resources
+C:\Users\Артём Плешаков\Source\Repos\OOP_Calculator\CalculatorUI\obj\Debug\CalculatorUI.csproj.GenerateResource.cache
+C:\Users\Артём Плешаков\Source\Repos\OOP_Calculator\CalculatorUI\obj\Debug\CalculatorUI.csproj.CoreCompileInputs.cache
+C:\Users\Артём Плешаков\Source\Repos\OOP_Calculator\CalculatorUI\obj\Debug\CalculatorUI.csproj.CopyComplete
+C:\Users\Артём Плешаков\Source\Repos\OOP_Calculator\CalculatorUI\obj\Debug\CalculatorUI.exe
+C:\Users\Артём Плешаков\Source\Repos\OOP_Calculator\CalculatorUI\obj\Debug\CalculatorUI.pdb

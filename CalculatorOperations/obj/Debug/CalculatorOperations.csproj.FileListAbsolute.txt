@@ -10,3 +10,9 @@ C:\Users\hp\Desktop\week-5-task-Bondesvick\CalculatorOperations\obj\Debug\Calcul
 C:\Users\hp\Desktop\week-5-task-Bondesvick\CalculatorOperations\obj\Debug\CalculatorOperations.csproj.CoreCompileInputs.cache
 C:\Users\hp\Desktop\week-5-task-Bondesvick\CalculatorOperations\obj\Debug\CalculatorOperations.dll
 C:\Users\hp\Desktop\week-5-task-Bondesvick\CalculatorOperations\obj\Debug\CalculatorOperations.pdb
+C:\Users\Артём Плешаков\Source\Repos\OOP_Calculator\CalculatorOperations\bin\Debug\CalculatorOperations.dll
+C:\Users\Артём Плешаков\Source\Repos\OOP_Calculator\CalculatorOperations\bin\Debug\CalculatorOperations.pdb
+C:\Users\Артём Плешаков\Source\Repos\OOP_Calculator\CalculatorOperations\obj\Debug\CalculatorOperations.csproj.AssemblyReference.cache
+C:\Users\Артём Плешаков\Source\Repos\OOP_Calculator\CalculatorOperations\obj\Debug\CalculatorOperations.csproj.CoreCompileInputs.cache
+C:\Users\Артём Плешаков\Source\Repos\OOP_Calculator\CalculatorOperations\obj\Debug\CalculatorOperations.dll
+C:\Users\Артём Плешаков\Source\Repos\OOP_Calculator\CalculatorOperations\obj\Debug\CalculatorOperations.pdb
